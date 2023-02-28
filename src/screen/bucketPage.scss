@@ -1,0 +1,14 @@
+.bucketpage{
+    margin: 10px;
+    &__final{
+        margin: 20px 0px;
+    }
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+    }
+}

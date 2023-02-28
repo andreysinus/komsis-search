@@ -1,0 +1,51 @@
+.searchitem{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    &__buttons{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        width: 120px;
+        min-width: 120px;
+        &-add{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            border-radius: 5px 5px 0px 0px;
+        }
+        &-count{
+            margin: 0;
+        }
+        &-toCart{
+            background-color: #007bff;
+            border-radius: 0px 0px 5px 5px;
+        }
+        &-butt{
+            font-size: 14pt;
+            margin: 2px;
+            background-color: transparent;
+            border: 0;
+            border-radius: 4px;
+        }
+    }
+    &__title{
+        font-size: 14pt;
+        font-weight: bold;
+        margin: 0;
+    }
+    &__price{
+        font-size: 14pt;
+        font-weight: bold;
+        margin: 20px 0px 0px 0px;
+    }
+    &__stock{
+        &-title{
+            margin: 0;
+        }
+    }
+}
