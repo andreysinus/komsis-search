@@ -8,15 +8,14 @@ import BucketPage from "./screen/bucketPage";
 function App() {
   const [value, setValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  //const [cartItems, setCartItems] = useState([]);
+  //const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [filterModal, setFilterModal] = useState(false)
+  //const [filterModal, setFilterModal] = useState(false)
 
   useEffect(() => {
     if (value.length > 2) {
       var data = getReqData(value);
-      setLoading(true);
       var config = {
         method: "post",
         maxBodyLength: Infinity,
@@ -34,7 +33,6 @@ function App() {
         .catch(function (error) {
           console.log(error);
         });
-      setLoading(false);
     } else setSearchResults([]);
   }, [value]);
 
