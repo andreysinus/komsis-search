@@ -4,12 +4,18 @@ import SearchItem from "../components/searchItem/searchItem";
 
 function SearchPage(props) {
   return (
-    <div>
-      <SearchBar setValue={props.setValue} value={props.value}/>
+    <div id="search">
+      <SearchBar
+        setValue={props.setValue}
+        value={props.value}
+        sort={props.sort}
+        setSort={props.setSort}
+        setFilterModal={props.setFilterModal}
+      />
       <div className="searchresults">
         {props.searchResults.length > 0 ? (
           props.searchResults.map((item, index) => {
-            return <SearchItem item={item["_source"]} />;
+            return <SearchItem setSnackbarOpen={props.setSnackbarOpen} updateCartItems={props.updateCartItems} item={item["_source"]} />;
           })
         ) : (
           <p сlassName="searchresults__title">Ничего не найдено</p>

@@ -42,7 +42,7 @@ function SearchItem(props) {
           <p className="searchitem__buttons-count">{count}</p>
           <button className="searchitem__buttons-butt" onClick={()=>addToCount()}>+</button>
         </div>
-        <button className="btn btn-primary">В корзину</button>
+        <button className={count>0?"btn btn-primary":"btn btn-secondary"} onClick={()=>{if (count>0) props.updateCartItems(props.item, count); setCount(0); props.setSnackbarOpen(true)}}>В корзину</button>
       </div>
     </div>
   );

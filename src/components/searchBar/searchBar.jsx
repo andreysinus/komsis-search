@@ -17,13 +17,13 @@ function SearchBar(props) {
       </div>
       <div className="filterbar">
         <div className="filterbar_sort">
-          <select class="form-select">
+          <select className="form-select" onChange={(event)=>{props.setSort(event.target.value)}}>
             <option value="1">По релевантности</option>
             <option value="2">По возрастанию цены</option>
             <option value="3">По убыванию цены</option>
           </select>
         </div>
-        <button className="btn btn-secondary">Фильтры</button>
+        <button className="btn btn-secondary" onClick={()=>props.setFilterModal(true)}>Фильтры</button>
       </div>
     </div>
   );
