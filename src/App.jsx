@@ -42,7 +42,7 @@ function App() {
       var config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "http://89.223.127.242:9200/products/_search",
+        url: "https://komsises.pilabs.ru/products/_search",
         headers: {
           "Content-Type": "application/json",
         },
