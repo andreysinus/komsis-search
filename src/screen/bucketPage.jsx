@@ -22,7 +22,7 @@ function BucketPage(props) {
               
             })}
             <h3>Итого: {finalPrice} руб.</h3>
-            <button className="btn btn-primary bucketpage__btn" onClick={()=>{tg.sendData(toString(props.cartItems))}}>Оформить заказ</button>
+            <button className="btn btn-primary bucketpage__btn" onClick={()=>{console.log(props.cartItems); tg.sendData(toString(props.cartItems))}}>Оформить заказ</button>
           </div>
         ) : (
           <h3 className="bucketpage__empty">Корзина пустая</h3>
