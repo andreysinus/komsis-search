@@ -13,7 +13,7 @@ function SearchItem(props) {
   return (
     <div className="searchitem">
       <div>
-        <a className="searchitem__title" href="#1" onClick={()=>{props.setCurrentSlug(props.item["slug"]);}}>{props.item["title"]}</a>
+        <a className="searchitem__title" href={"https://www.komsis.su/product/"+props.item["slug"]}>{props.item["title"]}</a>
         {props.item["countCherepovets"] === 0 &&
         props.item["countVologda"] === 0 ? (
           <p className="searchitem__stock-title">Нет в наличии</p>
