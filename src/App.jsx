@@ -115,7 +115,7 @@ function App() {
         setInStock={setInStock}
       />
       <Dialog fullWidth open={openFrame} onClose={() => setOpenFrame(false)}>
-        <iframe title="Карточка товара" src={"https://www.komsis.su/product/"+ currentSlug}></iframe>
+        <iframe title="Карточка товара" is="x-frame-bypass" src={"https://www.komsis.su/product/"+ currentSlug}></iframe>
       </Dialog>
       <Snackbar open={snackbarOpen} autoHideDuration={2000} onClose={snackClose}>
         <Alert onClose={snackClose} severity="info" sx={{ width: '100%' }}>
