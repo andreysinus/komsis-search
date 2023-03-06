@@ -15,7 +15,7 @@ function SearchPage(props) {
       <div className="searchresults">
         {props.searchResults.length > 0 ? (
           props.searchResults.map((item, index) => {
-            return <SearchItem setSnackbarOpen={props.setSnackbarOpen} updateCartItems={props.updateCartItems} item={item["_source"]} />;
+            return <SearchItem setSnackbarOpen={props.setSnackbarOpen} updateCartItems={props.updateCartItems} setCurrentSlug={props.setCurrentSlug} item={item["_source"]} />;
           })
         ) : (
           <p сlassName="searchresults__title">Ничего не найдено</p>

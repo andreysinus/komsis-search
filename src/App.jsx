@@ -4,7 +4,7 @@ import BottomBar from "./components/bottomBar/bottomBar";
 import "./App.scss";
 import SearchPage from "./screen/searchPage";
 import BucketPage from "./screen/bucketPage";
-import { Alert, Pagination, Snackbar } from "@mui/material";
+import { Alert, Dialog, Pagination, Snackbar } from "@mui/material";
 import FilterDialog from "./components/filterDialog/filterDialog";
 
 let tg = window.Telegram.WebApp;
@@ -22,6 +22,8 @@ function App() {
   const [inStock, setInStock] = useState(false);
   const [filterModal, setFilterModal] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [currentSlug, setCurrentSlug] = useState('0')
+  const [openFrame, setOpenFrame] = useState(false)
 
   const snackClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -35,6 +37,11 @@ function App() {
     array.push([item['title'], item['price'], count])
     setCartItems(array)
   }
+
+  useEffect(()=>{
+    if (currentSlug!=='0')
+        setOpenFrame(true)
+  }, [currentSlug])
 
   useEffect(() => {
     if (value.length > 2) {
@@ -79,6 +86,8 @@ function App() {
             setFilterModal={setFilterModal}
             updateCartItems={updateCartItems}
             setSnackbarOpen={setSnackbarOpen}
+            setOpenFrame={setOpenFrame}
+            setCurrentSlug={setCurrentSlug}
           />
           {!!pageQty && (
             <Pagination
@@ -105,6 +114,9 @@ function App() {
         inStock={inStock}
         setInStock={setInStock}
       />
+      <Dialog fullWidth open={openFrame} onClose={() => setOpenFrame(false)}>
+        <iframe title="Карточка товара" src={"https://www.komsis.su/product/"+ currentSlug}></iframe>
+      </Dialog>
       <Snackbar open={snackbarOpen} autoHideDuration={2000} onClose={snackClose}>
         <Alert onClose={snackClose} severity="info" sx={{ width: '100%' }}>
           Товар добавлен в корзину!
